@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Потребительская корзина</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;900" />
+    <style>
+    ::selection { 
+    color: #02422e;
+    }
+
+    .menu {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background: rgba(84, 84, 84, 0.6);
+    padding: 20px 10px;
+    position: relative;
+    }
+
+    .curcle1 {
+    box-sizing: border-box;
+    width: 150px;
+    height: 100px;
+    }
+
+    .menu-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    }
+
+    .menu-section > div {
+    text-align: center; 
+    margin-right: 70px;
+    }
+
+    .menu-section > div:last-child {
+    margin-right: 0; 
+    }
+
+    .text {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    font: 400 34px "Fira Sans Condensed";
+    color: black;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    white-space: nowrap
+    }
+
+    .text3 {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    margin: 0;
+    font: 500 34px "Fira Sans Condensed";
+    color: rgb(0, 0, 0);
+    background: rgba(93, 94, 92, 0.2);
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 20px;
+    }
+
+    .sostav, .version2, .raschet, .info, .sbor {
+    flex: 0 0 auto; 
+    padding-top: 3px;
+    }
+
+    .osnova {
+    box-sizing: border-box;
+    min-width: 100%;
+    position: relative;
+    }
+
+
+    .title {
+    padding: 10px;
+    margin: 0;
+    font: 600 100px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    text-align: center;
+    overflow-wrap: break-word;
+    }
+
+    .osnova-text {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    }
+
+    .t1 {
+    font: 500 70px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    } 
+
+    .t2 {
+    font: 400 36px "Fira Sans Condensed", sans-serif;
+    color: black;
+    text-align: justify;
+    line-height: 2;
+    margin-left: 40px;
+    margin-right: 40px;
+    }
+
+    .quote {
+    text-align: center;
+    gap: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font: 700 34px Balsamiq Sans;
+    color: #000000;
+    }
+
+    .title2 {
+    text-align: center;
+    gap: 10;
+    font: 500 70px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    }
+
+    .sostav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto
+    }
+
+    .sostav-section-left,
+    .sostav-section-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    box-sizing: border-box;
+    }
+
+    .sostav-layout1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    }
+
+    .img {
+    box-sizing: border-box;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    }
+
+    .section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: justify;
+    }
+
+    .first-title {
+    margin: 0;
+    font: 500 42px "Fira Sans Condensed", sans-serif;
+    white-space: pre-wrap;
+    }
+
+    .text2 {
+    margin-top: 8px;
+    font: 400 34px "Fira Sans Condensed", sans-serif;
+    color: black;
+    text-align: left;
+    white-space: pre-wrap;
+    }
+
+    .rr-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    flex-wrap: nowrap;
+    text-align: justify;
+    }
+
+    .rr-first, .rr-second, .rr-third {
+    flex: 0 1 auto;
+    margin: 0;
+    margin-bottom: 5px;
+    font: 400 34px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    line-height: 1;
+    margin-right: 5px;
+    margin-left: 20px;
+    }
+
+    .rr-first + .rr-second,
+    .rr-second + .rr-third {
+      margin-top: 20px;
+    }
+
+    .rr {
+    max-width: 70%;
+    flex: 1; 
+    margin-right: 5px; 
+    }
+
+    .info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 30px; 
+    }
+
+    .info-container2 {
+    display: flex;
+    justify-content: row; 
+    padding: 0 48px;
+    }
+  
+    .heading1, .heading2 {
+    font: 500 70px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    text-align: center; 
+    margin-bottom: 0px; 
+    margin-top: 0px; 
+    }
+
+    .financial {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 24.5px;
+    padding: 0 20px;
+    }
+  
+    .info-container1,
+    .financial2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    }
+
+    .img:hover {
+    transform: scale(1.1);
+    }
+
+    .financial1 {
+    display: flex;
+    align-items: center;
+    }
+
+    .fin3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    height: 100%; 
+    max-height: 350px;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+
+    .fin-text, .fin-text2 {
+    font: 400 34px "Fira Sans Condensed", sans-serif;
+    color: #000000;
+    text-align: left;
+    line-height: 2; 
+    }
+
+    .fin-text2 {
+    margin-bottom: 90px;
+    }
+
+    .info-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    }
+
+    span {
+    color: #0f2101;
+    }
+
+    .fin4 {
+    display: flex;
+    align-items: center;
+    }
+
+    footer {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font: 400 34px "Fira Sans Condensed", sans-serif;
+    }
+
+    a {
+    text-decoration: none; 
+    }
+
+    a:hover {
+    color: #ffffff; 
+    } 
+
+    /* Десктопы свыше 1600px */
+    @media (min-width: 1601px) {
+    .text {
+      font-size: 22px;
+    }
+    .curcle1 {
+      width: 150px;
+      height: 100px;
+    }
+    .quote {
+    font-size: 40px;
+    }
+    .img {
+    width: 300px;
+    height: 300px;
+    }
+
+    .first-title {
+    font-size: 40px;
+    }
+
+    .text2, .t2 {
+    font-size: 38px;
+    }
+
+    .rr-content {
+    margin-left: 15px;
+    margin-right: 30px;
+    }
+
+    .rr {
+    max-width: 100%; 
+    }
+
+    .rr-first, .rr-second, .rr-third, .fin-text, .fin-text2, .text3 {
+    font-size: 38px; 
+    }
+
+    }
+    /* Большие десктопы 1200px - 1600px */
+    @media (max-width: 1600px) and (min-width: 1201px) {
+    .text {
+      font-size: 20px;
+    }
+    .curcle1 {
+      width: 130px;
+      height: 100px;
+    }
+    .img {
+      width: 280px;
+      height: 280px;
+      margin-top: 10px;
+    }
+
+    .first-title {
+      font-size: 42px;
+      margin-top: 10px;
+    }
+
+    .rr-content {
+      margin-left: 15px;
+      margin-right: 30px;
+    }
+
+    .rr {
+      max-width: 100%; 
+    }
+
+    .rr-first, .rr-second, .rr-third, .fin-text, .fin-text2, .text3 {
+      font-size: 34px; 
+    }
+
+    }
+
+    /* Средние десктопы 900px - 1200px */
+    @media (max-width: 1200px) and (min-width: 901px) {
+    .menu-section > div {
+        margin-right: 10px;
+    }
+    .text {
+        font-size: 16px;
+    }
+    .curcle1 {
+        width: 150px;
+        height: 100px;
+    }
+    .title, .title2, .heading1, .heading2, .t1 {
+      font-size: 60px;
+    }
+    .t2 {
+      font-size: 30px;
+    }
+    .quote {
+      font-size: 26px;
+    }
+    .img {
+      width: 240px;
+      height: 240px;
+      margin-top: 10px;
+    }
+
+    .first-title {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    .text2 {
+      font-size: 28px;
+    }
+
+    .section-text {
+      max-width: 70%;
+    }
+    .rr-content {
+      margin-left: 15px;
+      margin-right: 20px;
+    }
+
+    .rr {
+      max-width: 100%; 
+    }
+
+    .rr-first, .rr-second, .rr-third, .fin-text, .fin-text2, .text3, footer {
+      font-size: 30px; 
+    }
+    }
+    /* Планшеты альбомной ориентации 600px - 900px */
+    @media (max-width: 900px) and (min-width: 601px) {
+    .menu-section > div {
+        margin-right: 5px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+    .curcle1 {
+        width: 100px;
+        height: 70px;
+    }
+    .title, .title2, .heading1, .heading2 {
+      font-size: 55px;
+    }
+    .t1 {
+      font-size: 30px;
+    }
+    .t2 {
+      font-size: 25px;
+    }
+    .quote {
+      font-size: 25px;
+    }
+    .img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .first-title {
+      font-size: 28px;
+      text-align: left;
+    }
+
+    .text2 {
+      font-size: 24px;
+    }
+
+    .section-text {
+      max-width: 70%;
+    }
+    .rr-content {
+      margin-left: 15px;
+      margin-right: 20px;
+    }
+
+    .rr {
+      max-width: 100%; 
+    }
+
+    .rr-first, .rr-second, .rr-third, .fin-text, .fin-text2, .text3, footer {
+      font-size: 25px; 
+      margin-right: 10px;
+    }
+    }
+
+    /* Планшеты портретной ориентации и большие смартфоны 480px - 600px */
+    @media (max-width: 600px) and (min-width: 481px) {
+    .menu-section > div {
+        margin-right: 0px;
+    }
+    .text {
+        font-size: 10px;
+    }
+    .curcle1 {
+        width: 80px;
+        height: 50px;
+    }
+    .title, .title2, .heading1, .heading2 {
+      font-size: 40px;
+    }
+    .t1 {
+      font-size: 20px;
+    }
+    .t2 {
+      font-size: 18px;
+    }
+    .quote {
+      font-size: 18px;
+    }
+    .img {
+      width: 170px;
+      height: 170px;
+    }
+
+    .first-title {
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .text2 {
+      font-size: 18px;
+    }
+    .rr-content {
+      margin-left: 15px;
+      margin-right: 20px;
+    }
+
+    .rr {
+      max-width: 100%; 
+    }
+
+    .rr-first, .rr-second, .rr-third, .fin-text, .fin-text2, .text3, footer {
+      font-size: 18px; 
+      margin-right: 10px;
+    }
+    }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <img src="logochb.PNG" class="curcle1" />
+        <div class="menu-section">
+            <div class="version2">
+                <a href="main.html" class="text">Перейти к обычному режиму</a>
+            </div>
+            <div class="sostav">
+                <a href="#Состав" class="text">Состав</a>
+            </div>
+            <div class="raschet">
+                <a href="#Расчёт" class="text">Расчёты</a>
+            </div>
+            <div class="info">
+                <a href="#Инфо" class="text">Инфо</a>
+            </div>
+            <div class="sbor">
+                <a href="opros2.html" class="text">Пройти опрос</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="title">Потребительская корзина</p>
+        <div class="osnova">
+            <div class="osnova-text">
+                <p class="t1">ЧТО ЭТО ТАКОЕ?</p>
+                <p class="t2">Набор продовольственных и непродовольственных товаров, а также услуг, необходимых для поддержания жизнедеятельности человека на минимальном уровне. Используется для расчёта значения прожиточного минимума. В России за её наполнением следит Росстат, корректирует.</p>
+            </div>
+        </div>
+        <p class="quote">“Если вы хотите стать богатым, думайте не только о получении, но и о накоплении” -&nbsp; Ben Franklin</p>
+        <p id="Состав" class="title2">Что входит в состав?</p>
+        <div class="sostav-container">
+            <div class="sostav-section-left">
+                <div class="sostav-layout1">
+                <img class="img" src="продуктычб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Продукты</p>
+                    <p class="text2">Мясо и рыба, молочные продукты, овощи и фрукты, хлебобулочные изделия, крупы, паста, напитки.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="кафечб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Кафе и рестораны</p>
+                    <p class="text2">А также кофейни, столовые, закусочные, точки быстрого питания.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="красотачб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Красота и здоровье</p>
+                    <p class="text2">Лекарства, услуги врачей и косметологов, приобретение уходовой и декоративной косметики. Посещение салонов красоты/ массажа, спа.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                    <img class="img" src="одеждачб.png" />
+                    <div class="section-text">
+                    <p class="first-title" style="color: #000000">Одежда и обувь</p>
+                    <p class="text2">Мужская, женская, детская одежда и обувь. Покупка тканей и аксессуаров.</p>
+                    </div>
+                </div>
+                <div class="sostav-layout1">
+                    <img class="img" src="связьчб.png" />
+                    <div class="section-text">
+                    <p class="first-title" style="color: #000000">Связь и интернет</p>
+                    <p class="text2">Оплата мобильной связи и интернета, абонентская плата за местную телефонную связь, почтовые отправления.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sostav-section-right">
+                <div class="sostav-layout1">
+                <img class="img" src="досугчб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Досуг</p>
+                    <p class="text2">Билеты в кинотеатр, театр, музей, выставки, экскурсии. Проведение торжеств, прогулки.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="домчб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Товары для дома</p>
+                    <p class="text2">Мебель, бытовые товары, посуда, товары личной гигиены, канцтовары, товары для строительства и ремонта.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="спортчб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Спорттовары</p>
+                    <p class="text2">Спортивные товары и услуги, оплата абонементов в спортзал.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="жкхчб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">ЖКХ и ЖКУ</p>
+                    <p class="text2">Коммунальные услуги, арендная плата.</p>
+                </div>
+                </div>
+                <div class="sostav-layout1">
+                <img class="img" src="прочеечб.png" />
+                <div class="section-text">
+                    <p class="first-title" style="color: #000000">Прочее</p>
+                    <p class="text2">Незапланированные расходы.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <p id="Расчёт" class="title2">Расчёт потребительской корзины</p>
+        <div class="rr-content">
+            <div class="rr">
+                <p class="rr-first"><span>Личная потребительская корзина</span> — это список товаров и услуг, которые конкретный человек считает для себя необходимым.</p>
+                <p class="rr-second">Это не просто механическое распределение бюджета, а осознанный подход к управлению финансами. Он помогает не только жить согласно своим возможностям, но и строить более <span>уверенное и обеспеченное будущее.</span> Важно помнить, что умение адаптироваться к изменениям и гибко подходить к расходам является ключом к успешному финансовому планированию.</p>
+                <p class="rr-third"><span>Начните сегодня</span> и уже в следующем месяце вы увидите результат! <a href="raschet2.html" class="text3">Узнать больше</a> </p>
+            </div>
+        </div>
+        <div class="info-container">
+          <div class="info-container2">
+            <p id="Инфо" class="heading1">В чем польза?</p>
+          </div>
+        </div>
+        <div class="financial">
+            <div class="info-container1">
+                <div class="financial1">
+                    <div class = "fin3">
+                        <p class="fin-text"><span>Для граждан:</span> существует с целью организации контроля за финансами, повышения финансовой грамотности. Помогает определить необходимый для комфортной жизни уровень дохода. <br> <span>Для государства:</span> помогает рассчитать уровень инфляции, оценить доходы населения, установить социальные выплаты.</p>
+                    </div>    
+                </div>  
+            </div>          
+            <div class="info-summary">
+                <p class="heading2">Применение</p>
+            </div>
+            <div class="financial2">
+                <div class="fin4">
+                    <p class="fin-text2">Использование потребительской корзины <span>помогает четко понимать</span>, какие товары и услуги необходимо включить в свой ежемесячный или годовой бюджет. <span>Возможность отслеживать</span> изменения цен на товары и услуги в течение времени, начать откладывать, копить, экономить.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    <p>&copy; 2025 Все права защищены.</p>
+</footer>
+</body>
+</html>
