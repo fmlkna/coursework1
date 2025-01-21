@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Опрос</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;900" />
+  <style>
+    ::selection { 
+    color: #036346;
+    text-shadow: 3px 3px 2px rgba(52, 27, 2, 0.5); 
+    }
+    body {
+        display: flex;
+        flex-direction: column; 
+        font-family: 'Fira Sans Condensed', sans-serif; 
+        background: rgba(206, 218, 202, 1) 0%;
+        color: rgba(4, 57, 8, 0.895);
+        align-items: center;
+    }
+
+    h1 {
+        font: 600 92px "Fira Sans Condensed", sans-serif;
+        color: #1c3e02;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-shadow: 3px 3px 2px rgba(52, 27, 2, 0.5); 
+        overflow-wrap: break-word;
+        align-items: center;
+    }
+    
+    .fraza {
+        font: 200 24px "Fira Sans Condensed", sans-serif;
+        color: #1c3e02;
+        gap: 20px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .fraza1 {
+        font: 200 24px "Fira Sans Condensed", sans-serif;
+        color: #1c3e02;
+        margin-top: 5px;
+        text-align: justify;
+    }
+
+    .form-container {
+        display: grid;
+        max-width: 500px;
+        margin: 0 auto; 
+        padding: 20px;
+        color: #033014;
+        border: 3px solid #000000;
+        border-radius: 5px;
+        background: #f9f9f9;
+        box-sizing: border-box; 
+    }
+
+    h2 {
+        margin-bottom: 20px; 
+    }
+
+    .form-group {
+        margin-bottom: 15px; 
+    }
+
+    input[type="q2"], input[type="text"],
+    input[type="q4"], select {
+        width: 100%; 
+        padding: 15px;
+        margin-top: 5px; 
+        border: 1px solid #0c2601;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-family: 'Fira Sans Condensed', sans-serif; 
+        font-size: 20px;
+        background-color: #dbeece; 
+    }
+
+    input:focus, select:focus {
+        outline: none; 
+        box-shadow: 0 0 5px #94c8bf; 
+        border-color: #0c3603;
+    }
+
+    input[type="radio"] {
+        margin-right: 5px;  
+        appearance: none; 
+        width: 15px;
+        height: 15px;
+        border: 2px solid #082b02;
+        border-radius: 50%; 
+        cursor: pointer;
+        position: relative;
+    }
+
+    input[type="radio"]:checked {
+        background-color: #5c9b25; 
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(12, 55, 2);
+        color: #fff;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: 'Fira Sans Condensed', sans-serif; 
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #4e7b41;
+        transform: scale(1.1); 
+    }
+
+    footer {
+        background-color: rgb(12, 55, 2);
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        font: 400 24px "Fira Sans Condensed", sans-serif;
+    }
+
+    a {
+        color: #075801;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #065442; 
+    }
+    
+    input[type="radio"]:checked + label  {
+        text-decoration: underline;
+        color: #61c17c; 
+    }
+    .osn {
+        margin-right: 0;
+    }
+    .menu {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: rgba(118, 146, 110, 0.347);
+        padding: 20px 10px;
+        position: relative;
+    }
+    
+    .curcle1 {
+        box-sizing: border-box;
+        width: 150px;
+        height: 100px;
+    }
+    
+    .menu-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .text {
+        box-sizing: border-box;
+        padding: 15px 20px;
+        font: 400 24px "Fira Sans Condensed", sans-serif;
+        color: black;
+        background: rgba(41, 80, 10, 0.2);
+        border-radius: 50px;
+    }
+    label {
+        font: 400 20px "Fira Sans Condensed", sans-serif;
+    }
+    /* Десктопы свыше 1600px */
+    @media (min-width: 1601px) {
+    .menu-section {
+        gap: 120px; 
+    }
+    .text {
+        font-size: 30px;
+    }
+    }
+    /* Большие десктопы 1200px - 1600px */
+    @media (max-width: 1600px) and (min-width: 1201px) {
+    .menu-section {
+        gap: 80px;
+    }
+    }
+
+    /* Средние десктопы 900px - 1200px */
+    @media (max-width: 1200px) and (min-width: 901px) {
+    .menu-section {
+        gap: 60px;
+    }
+    .text, footer, .fraza1, .fraza, label, input[type="q2"], input[type="text"], input[type="q4"], select {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 78px;
+    }
+    }
+
+    /* Планшеты альбомной ориентации 600px - 900px */
+    @media (max-width: 900px) and (min-width: 601px) {
+    .menu-section {
+        gap: 40px;
+    }
+    .text, footer, .fraza1, .fraza, label, input[type="q2"], input[type="text"], input[type="q4"], select {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    }
+
+    /* Планшеты портретной ориентации и большие смартфоны 480px - 600px */
+    @media (max-width: 600px) and (min-width: 481px) {
+    .menu-section {
+        gap: 20px;
+    }
+    .text, footer, .fraza1, .fraza, label, input[type="q2"], input[type="text"], input[type="q4"], select {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 42px;
+    }
+    }
+
+  </style>
+</head>
+<body>
+    <div class="menu">
+        <img src="logo.PNG" class="curcle1" />
+        <div class="menu-section">
+            <a href="opros2.html" class="text">Версия для слабовидящих</a> 
+            <div class="osn">
+                <a href="main.html" class="text">Вернуться на главную</a>
+            </div>
+        </div>
+    </div>
+    <h1>Потребительская корзина</h1>
+    <p class="fraza1"> Просим вас принять участие в небольшом опросе, чтобы мы могли развивать наш сервис и двигались в нужном направлении.</p>
+    <main>
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="age">Возраст</label>
+                        <input type="text" id="age" name="age" placeholder="Введите ваш возраст" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="q2">Как вы оцениваете свою финансовую грамотность?</label>
+                        <select id="q2" name="q2" required>
+                            <option value="best">Высокий уровень</option>
+                            <option value="normal">Средний уровень</option>
+                            <option value="worse">Низкий уровень</option>
+                            <option value="ns">Не знаю</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ведёте ли вы учёт своего бюджета?</label>
+                        <input type="radio" id="yes" name="gender" value="yes" required>
+                        <label for="yes">Да</label>
+                        <input type="radio" id="no" name="gender" value="no">
+                        <label for="no">Нет</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="q4">Как часто вы совершаете необдуманные покупки?</label>
+                        <select id="q4" name="q4" required>
+                            <option value="always">Постоянно</option>
+                            <option value="often">Часто</option>
+                            <option value="rarely">Редко</option>
+                            <option value="never">Никогда</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <p class="fraza"> Ваш ответ очень важен для нас! </p>
+<footer>
+<p>&copy; 2025 Все права защищены. </p>
+</footer>
+</body>
+</html>
