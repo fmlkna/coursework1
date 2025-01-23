@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Опрос</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;900" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;500;900">
   <style>
     ::selection { 
     color: #02422e;
@@ -248,7 +248,7 @@
 </head>
 <body>
     <div class="menu">
-        <img src="logochb.PNG" class="curcle1" />
+        <img src="logochb.PNG" class="curcle1" alt="Логотип">
         <div class="menu-section">
             <a href="opros.html" class="text">Перейти к обычному режиму</a> 
             <div class="osn">
@@ -269,6 +269,7 @@
                     <div class="form-group">
                         <label for="q2">Как вы оцениваете свою финансовую грамотность?</label>
                         <select id="q2" name="q2" required>
+                            <option value="" disabled selected>Выберите один из вариантов</option>
                             <option value="best">Высокий уровень</option>
                             <option value="normal">Средний уровень</option>
                             <option value="worse">Низкий уровень</option>
@@ -285,6 +286,7 @@
                     <div class="form-group">
                         <label for="q4">Как часто вы совершаете необдуманные покупки?</label>
                         <select id="q4" name="q4" required>
+                            <option value="" disabled selected>Выберите один из вариантов</option>
                             <option value="always">Постоянно</option>
                             <option value="often">Часто</option>
                             <option value="rarely">Редко</option>

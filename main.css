@@ -131,7 +131,7 @@
   
   .quote {
   text-align: center;
-  gap: 20;
+  gap: 20px;
   font: 700 24px Balsamiq Sans;
   color: #023e39;
   }
@@ -256,7 +256,6 @@
   
   .info-container2 {
   display: flex;
-  justify-content: row; 
   padding: 0 48px;
   }
   
@@ -387,7 +386,6 @@
   /* Десктопы свыше 1600px */
   @media (min-width: 1601px) {
   .text {
-    padding: 18px 25px;
     font-size: 28px;
   }
   .curcle1 {
